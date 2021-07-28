@@ -1,41 +1,112 @@
 const inquirer = require("inquirer");
 const jest = require("jest");
 const fs = require("fs");
+const { generateEngineerHtml, generateInternHtml, generateManagerHtml } = require("./utils/generateHTML");
+  
+// const Employee = require("./lib/Employee.js");
+// const Engineer = require("./lib/Engineer.js");
+// const Intern = require("./lib/Intern.js");
+// const Manager = require("./lib/Manager.js");
 
-//Define constructors in other file and export them
-//inquirer prompts
+//inquirer prompts - Basic employee questions
 
 const employeeQuestions = [
-    {
-        type: 'input',
-        message: 'Employee Name: ',
-        name: 'employeeName',
-    },
-    {
-        type: 'input',
-        message: 'Employee ID: ',
-        name: 'id',
-    },
-    {
-        type: 'input',
-        message: 'Employee Email: ',
-        name: 'email',
-    },
+  {
+    type: "input",
+    message: "Employee Name: ",
+    name: "employeeName",
+  },
+  {
+    type: "input",
+    message: "Employee ID: ",
+    name: "id",
+  },
+  {
+    type: "input",
+    message: "Employee Email: ",
+    name: "email",
+  },
+  {
+    type: "rawlist",
+    message:
+      'What is this employee\'s role within the company? (Use up/down arrows and "enter" key to select) ',
+    name: "role",
+    choices: ["Engineer", "Intern", "Manager"],
+  },
 ];
+
+const engineerQuestions = [
+  {
+    type: "input",
+    message: "GitHub Username: ",
+    name: "githubUserName",
+  },
+];
+
+const internQuestions = [
+  {
+    type: "input",
+    message: "School Name: ",
+    name: "school",
+  },
+];
+
+const managerQuestions = [
+  {
+    type: "input",
+    message: "Office Number: ",
+    name: "officeNumber",
+  },
+];
+
+inquirer.prompt(employeeQuestions).then((res) => {
+//   const employee = new Employee()
+  employeeObj = res;
+
+  if (res.role == "Engineer") {
+    inquirer.prompt(engineerQuestions).then((res) => {
+      employeeObj.githubUserName = res.githubUserName;
+      fs.writeFile(
+        "./dist/index.html",
+        generateEngineerHtml(employeeObj),
+        (err) => {
+          err ? console.log(err) : console.log("Success!");
+        }
+      );
+    });
+  }
+  if (res.role == "Intern") {
+    inquirer.prompt(internQuestions).then((res) => {
+      employeeObj.school = res.school;
+      fs.writeFile(
+        "./dist/index.html",
+        generateInternHtml(employeeObj),
+        (err) => {
+          err ? console.log(err) : console.log("Success!");
+        }
+      );
+    });
+  }
+  if (res.role == "Manager") {
+    inquirer.prompt(managerQuestions).then((res) => {
+      employeeObj.officeNumber = res.officeNumber;
+      fs.writeFile(
+        "./dist/index.html",
+        generateManagerHtml(employeeObj),
+        (err) => {
+          err ? console.log(err) : console.log("Success!");
+        }
+      );
+    });
+  }
+});
+
 //run constructor files to create new employees
 //push each employee object to an array
-    //loop over that array - use template literal, ends up as html string that makes up each card
+//loop over that array - use template literal, ends up as html string that makes up each card
 //have a basic html file to add to
 //create dynamic content
 
 //Create employee class
 //create manager which extends employee
 //create constructor
-
-
-// + tests
-    //test constructor functions for different types of employees
-    //'Descripe intern manager - should be an object
-    //describe functions
-    //use one test file for each type of employee
-    //node tests all test files ****ONLY IN THE TEST FOLDER****
