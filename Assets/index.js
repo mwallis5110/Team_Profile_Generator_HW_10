@@ -1,12 +1,11 @@
 const inquirer = require("inquirer");
 const jest = require("jest");
 const fs = require("fs");
-const { generateEngineerHtml, generateInternHtml, generateManagerHtml } = require("./utils/generateHTML");
-  
-// const Employee = require("./lib/Employee.js");
-// const Engineer = require("./lib/Engineer.js");
-// const Intern = require("./lib/Intern.js");
-// const Manager = require("./lib/Manager.js");
+const {
+  generateEngineerHtml,
+  generateInternHtml,
+  generateManagerHtml,
+} = require("./utils/generateHTML");
 
 //inquirer prompts - Basic employee questions
 
@@ -60,9 +59,7 @@ const managerQuestions = [
 ];
 
 inquirer.prompt(employeeQuestions).then((res) => {
-//   const employee = new Employee()
   employeeObj = res;
-
   if (res.role == "Engineer") {
     inquirer.prompt(engineerQuestions).then((res) => {
       employeeObj.githubUserName = res.githubUserName;
@@ -100,13 +97,3 @@ inquirer.prompt(employeeQuestions).then((res) => {
     });
   }
 });
-
-//run constructor files to create new employees
-//push each employee object to an array
-//loop over that array - use template literal, ends up as html string that makes up each card
-//have a basic html file to add to
-//create dynamic content
-
-//Create employee class
-//create manager which extends employee
-//create constructor
