@@ -1,3 +1,5 @@
+
+
 //Generates html card when a new engineer is created
 function generateEngineerHtml(res) {
   return `
@@ -28,7 +30,7 @@ function generateEngineerHtml(res) {
   </div>
 </body>
 </html>
-`;
+`
 }
 
 //Generates html card when a new intern is created

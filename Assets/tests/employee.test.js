@@ -1,7 +1,6 @@
 const { expect, it } = require("@jest/globals");
 const { describe } = require("yargs");
 const Employee = require("../lib/Employee");
-//require jest in test files, not index (maybe? Look at activities)
 
 describe("Employee", () => {
   describe("Get name", () => {
@@ -23,7 +22,6 @@ describe("Employee", () => {
   });
 });
 
-
 describe("Employee", () => {
   describe("Get email", () => {
     it("should return the employee's email address");
@@ -33,11 +31,3 @@ describe("Employee", () => {
     expect(email).toEqual(employee.email);
   });
 });
-
-
-// + tests
-//test constructor functions for different types of employees
-//'Descripe intern manager - should be an object
-//describe functions
-//use one test file for each type of employee
-//node tests all test files ****ONLY IN THE TEST FOLDER****

@@ -1,9 +1,10 @@
+//Creates basic employee object, which is added onto by other emloyee types
 class Employee {
-  constructor(employeeName, id, email, role) {
+  constructor(employeeName, id, email) {
     this.employeeName = employeeName;
     this.id = id;
     this.email = email;
-    this.role = role;
+    this.role = "Employee";
   }
 
   getName() {
