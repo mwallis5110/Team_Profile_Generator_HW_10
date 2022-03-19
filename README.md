@@ -34,7 +34,7 @@ After initializing the program, users will be prompted to input information abou
 
 ### Demo:
 
-![A demonstration gif of the program](Screencast_Demo.gif) - TODO
+![A demonstration gif of the program](demonstration.gif)
 
 ## License
 
@@ -62,4 +62,4 @@ mwallis5110@gmail.com
 
 #### This Readme was generated using a Node.js Readme generator.
 
-[Get that open-source generator here.](git@github.com:mwallis5110/Readme_Generator_HW_09.git)
+![Get that open-source generator here.](git@github.com:mwallis5110/Readme_Generator_HW_09.git)
