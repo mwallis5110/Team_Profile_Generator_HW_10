@@ -1,5 +1,5 @@
 const inquirer = require("inquirer");
-const jest = require("jest");
+// const jest = require("jest");
 const fs = require("fs");
 const generateHtml = require("./utils/generateHTML.js");
 
@@ -60,7 +60,7 @@ function askEngineerQuestions() {
           employeeAnswers.email,
           engineerAnswers.githubUserName
         );
-        employeeArray.push(newEngineer);
+        employeeArray.push(generateHtml.generateEngineerHtml(newEngineer));
         initialPrompt();
       });
   });
@@ -83,7 +83,7 @@ function askInternQuestions() {
           employeeAnswers.email,
           internAnswers.school
         );
-        employeeArray.push(newIntern);
+        employeeArray.push(generateHtml.generateInternHtml(newIntern));
         initialPrompt();
       });
   });
@@ -106,17 +106,20 @@ function askManagerQuestions() {
           employeeAnswers.email,
           managerAnswers.officeNumber
         );
-        employeeArray.push(newManager);
+        employeeArray.push(generateHtml.generateManagerHtml(newManager));
         initialPrompt();
       });
   });
 }
 
 function generateFinalHtml() {
-  console.log(generateHtml.generatePageHtml(employeeArray));
-  fs.writeFile("./dist/index.html", generateHtml.generatePageHtml(employeeArray), (err) => {
-    err ? console.log(err) : console.log("Success!");
-  });
+  fs.writeFile(
+    "./dist/index.html",
+    generateHtml.generatePageHtml(employeeArray),
+    (err) => {
+      err ? console.log(err) : console.log("Success!");
+    }
+  );
 }
 
 function initialPrompt() {
