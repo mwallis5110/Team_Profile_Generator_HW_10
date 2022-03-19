@@ -1,61 +1,65 @@
-# Unit 18 Nosql Homework: Workout Tracker
+# Title
 
-For this assignment, you'll create a workout tracker. You have already been provided with the front end code in the `Develop` folder. This assignment will require you to create Mongo database with a Mongoose schema and handle routes with Express.
+Team Profile Generator
 
-## User Story
+## Description
 
-* As a user, I want to be able to view create and track daily workouts. I want to be able to log multiple exercises in a workout on a given day. I should also be able to track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, I should be able to track my distance traveled.
+This is a program used to create employee information cards.
 
-## Business Context
+## Table of Contents
 
-A consumer will reach their fitness goals more quickly when they track their workout progress.
+#### [Installation Instructions](#installation-instructions)<br>
 
-## Acceptance Criteria
+#### [Using The Program](#using-the-program)<br>
 
-When the user loads the page, they should be given the option to create a new workout or continue with their last workout.
+#### [License](#license)<br>
 
-The user should be able to:
+#### [How to Contribute](#how-to-contribute)<br>
 
-  * Add exercises to the most recent workout plan.
+#### [Tests](#tests)<br>
 
-  * Add new exercises to a new workout plan.
+#### [Questions](#questions)<br>
 
-  * View the combined weight of multiple exercises from the past seven workouts on the `stats` page.
+#### [Github Link](#github-link)<br>
 
-  * View the total duration of each workout from the past seven workouts on the `stats` page.
+#### [Email](#email)<br>
 
-> **Important:** Look into using a MongoDB aggregate function to dynamically add up and return the total duration for each workout. Check out the [MongoDB documentation on the $addFields](https://docs.mongodb.com/manual/reference/operator/aggregation/addFields/), the [MongoDB documentation on the $sum operator](https://docs.mongodb.com/manual/reference/operator/aggregation/sum/), and the [Mongoose documentation on aggregate functions](https://mongoosejs.com/docs/api.html#aggregate_Aggregate) to learn how it can be accomplished.
+## Installation Instructions
 
-To deploy an application with a MongoDB database to Heroku, you'll need to set up a MongoDB Atlas account and connect a database from there to your application. Be sure to use the following guides for support:
+In order to initialize the program, users should open it in an integrated terminal and type "node index.js".
 
-  * [Set Up MongoDB Atlas](../04-Important/MongoAtlas-Setup.md)
+## Using the Program
 
-  * [Deploy with Heroku and MongoDB Atlas](../04-Important/MongoAtlas-Deploy.md)
+After initializing the program, users will be prompted to input information about an individual employee within the terminal. Pressing enter will cause the program to move to the next prompt. When all prompts are completed, the finished card should appear in index.html. <b>The cards can be viewed by using a program or plug-in such as Live Server</b>
 
-## Commit Early and Often
+### Demo:
 
-One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for the following two reasons:
+![A demonstration gif of the program](Screencast_Demo.gif) - TODO
 
-1. Your commit history is a signal to employers that you are actively working on projects and learning new skills.
+## License
 
-2. Your commit history allows you to revert your codebase in the event that you need to return to a previous state.
+#### [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Follow these guidelines for committing:
+## How to Contribute
 
-* Make single-purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits.
+Create a separate branch, make your changes, and then open a pull request.
 
-* Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history.
+## Tests
 
-* Don't commit half-done work, for the sake of your collaborators (and your future self!).
+Tests can be found in the "tests" folder. Tests were created to ensure proper information is entered for each prompt
 
-* Test your application before you commit to ensure functionality at every step in the development process.
+## Questions
 
-We want you to have well over 200 commits by graduation, so commit early and often!
+Contact me via email at mwallis5110@gmail.com
 
-## Submission on BCS
+## Github Link
 
-You are required to submit the following:
+https://github.com/mwallis5110/Team_Profile_Generator_HW_10
 
-* The URL to the deployed application
+## Email
 
-* The URL to the GitHub repository
+mwallis5110@gmail.com
+
+#### This Readme was generated using a Node.js Readme generator.
+
+[Get that open-source generator here.](git@github.com:mwallis5110/Readme_Generator_HW_09.git)
